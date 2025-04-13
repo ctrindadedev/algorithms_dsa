@@ -1,11 +1,11 @@
 //Árvore Binária
 
-    //Uma árvore é uma estrutura hierárquica onde cada elemento (nó) pode ter "filhos". É amplamente usada para representar dados organizados de forma hierárquica, como sistemas de arquivos, hierarquias organizacionais ou mesmo jogos de tabuleiro.
-    //Uma árvore é composta de nós conectados por arestas. O nó principal é chamado de raiz, e cada nó pode ter 0 ou mais filhos
+//Uma árvore é uma estrutura hierárquica onde cada elemento (nó) pode ter "filhos". É amplamente usada para representar dados organizados de forma hierárquica, como sistemas de arquivos, hierarquias organizacionais ou mesmo jogos de tabuleiro.
+//Uma árvore é composta de nós conectados por arestas. O nó principal é chamado de raiz, e cada nó pode ter 0 ou mais filhos
 
 //Exemplo no mundo real:
-    // Árvore genealógica: Representa relações familiares.
-    // Sistema de arquivos: Pastas e subpastas.
+// Árvore genealógica: Representa relações familiares.
+// Sistema de arquivos: Pastas e subpastas.
 
 //Termos Importantes:
 
@@ -16,25 +16,37 @@
 // Altura da Árvore: O número máximo de níveis.
 
 //Dicas Importantes
-    // Escolha o Algoritmo Certo:
-        // Use DFS para explorar toda a árvore e BFS para encontrar o caminho mais curto em árvores amplas.
-    //Organize Bem os Nós:
-        // Estruturas bem definidas tornam o gerenciamento de árvores muito mais simples.
-    // Use Árvore para Dados Hierárquicos
-        // Sempre que precisar organizar informações em níveis (como menus ou pastas), considere usar árvores.
+// Escolha o Algoritmo Certo:
+// Use DFS para explorar toda a árvore e BFS para encontrar o caminho mais curto em árvores amplas.
+//Organize Bem os Nós:
+// Estruturas bem definidas tornam o gerenciamento de árvores muito mais simples.
+// Use Árvore para Dados Hierárquicos
+// Sempre que precisar organizar informações em níveis (como menus ou pastas), considere usar árvores.
 
-        // A (Raiz)
-       ///   \
-      //B     C
-     /// \   / \
-    //D   E F   G
+// A (Raiz)
+///   \
+//B     C
+/// \   / \
+//D   E F   G
 
 const arvore = {
   valor: "A",
   filhos: [
-    { valor: "B", filhos: [{ valor: "D", filhos: [] }, { valor: "E", filhos: [] }] },
-    { valor: "C", filhos: [{ valor: "F", filhos: [] }, { valor: "G", filhos: [] }] }
-  ]
+    {
+      valor: "B",
+      filhos: [
+        { valor: "D", filhos: [] },
+        { valor: "E", filhos: [] },
+      ],
+    },
+    {
+      valor: "C",
+      filhos: [
+        { valor: "F", filhos: [] },
+        { valor: "G", filhos: [] },
+      ],
+    },
+  ],
 };
 class No {
   constructor(valor) {
@@ -58,12 +70,12 @@ console.log(raiz);
 
 //Percorrendo uma árvore
 
-    //Busca em Profundidade (DFS - Depth First Search):**
-    //Explora o máximo de profundidade antes de voltar e explorar outros caminhos.
+//Busca em Profundidade (DFS - Depth First Search):**
+//Explora o máximo de profundidade antes de voltar e explorar outros caminhos.
 
 function buscaEmProfundidade(no) {
   console.log(no.valor);
-  no.filhos.forEach(filho => buscaEmProfundidade(filho));
+  no.filhos.forEach((filho) => buscaEmProfundidade(filho));
 }
 
 buscaEmProfundidade(raiz);
@@ -79,7 +91,7 @@ function buscaEmLargura(raiz) {
   while (fila.length > 0) {
     const no = fila.shift();
     console.log(no.valor);
-    no.filhos.forEach(filho => fila.push(filho));
+    no.filhos.forEach((filho) => fila.push(filho));
   }
 }
 
@@ -90,16 +102,6 @@ buscaEmLargura(raiz);
 // C
 
 //Sistema de Arquivos
-class No {
-  constructor(nome) {
-    this.nome = nome;
-    this.filhos = [];
-  }
-
-  adicionarFilho(filho) {
-    this.filhos.push(filho);
-  }
-}
 
 const pastaRaiz = new No("Raiz");
 const pastaDocs = new No("Documentos");
@@ -117,4 +119,3 @@ console.log(pastaRaiz);
 // 2. Implemente uma função para contar o número total de nós em uma árvore.
 // 3. Crie uma árvore genealógica e implemente um método para listar todos os descendentes de um nó.
 // 4. Implemente uma busca em profundidade e largura para encontrar um nó com um valor específico.
-
