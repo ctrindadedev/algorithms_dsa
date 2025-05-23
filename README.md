@@ -7,4 +7,8 @@
 
 ### About the Repository
 
+<<<<<<< HEAD
 A repository for practicing/studying **Data Structures and Algorithms** using **TypeScript, JavaScript and Java**, based on my college classes, exercises and materials from online sources.
+=======
+A repository for practicing/studying **Data Structures and Algorithms** using **JavaScript and Python**, based exercises and materials from online sources.
+>>>>>>> fb15ed816ecac06690803c5a1646b2d94202ace1
