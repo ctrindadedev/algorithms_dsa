@@ -74,35 +74,41 @@ import java.util.*;
         }
 
 
-        //Exercicío 4 (Corrigir)
+        //Exercicio 4
+
+        //Crie um vetor de nomes ordenados em ordem alfabética. Implemente a busca binária para localizar se nome “Maria” existe no vetor
+
         public int findStringInput(String[] array, String target) {
+
             int ini = 0, fim = array.length - 1;
             while (ini <= fim) {
                 int meio = (ini + fim) / 2;
-                if (array[meio] == target)
+                //CompareTo em Java: Retorna 0 se igual, > 0 se a primeira string vem depois e < 0 se a primeira string vem antes;
+
+                int compararString = array[meio].compareTo(target);
+                if (compararString == 0)
                     return meio;
-                else if (array[meio] < target) ini = meio + 1;
+                else if (compararString < 0) ini = meio + 1;
                 else fim = meio - 1;
             }
             return -1;
-
-            // Crie um vetor de nomes ordenados em ordem alfabética. Implemente a busca binária para localizar seo nome “Maria” existe no vetor.
         }
 
-        //Exercicío 5 (Corrigir)
-            public int findLowestValue(int[] array) {
-                int ini = 0, fim = array.length - 1;
-                double lower = 0;
-                while (ini <= fim) {
-                    int meio = (ini + fim) / 2;
-                    if (array[meio] < lower && array[meio] > 50) {
-                        lower = meio;
-                    } else if (array[meio] < target) ini = meio + 1;
-                    else fim = meio - 1;
-                }
-                System.out.println("Valor não encontrado");
-                return -1;
+
+        //Exercicío 5
+        public int findLowestValue(int[] array) {
+            int ini = 0, fim = array.length - 1;
+            double lower = 0;
+            while (ini <= fim) {
+                int meio = (ini + fim) / 2;
+                if (array[meio] <= lower && array[meio] > 50) {
+                    lower = meio;
+                } else if (array[meio] > lower && array[meio] > 50) ini = meio + 1;
+                else fim = meio - 1;
             }
+            System.out.println("Valor não encontrado");
+            return -1;
+        }
 
         //Exercicío 6
         public int findTwentyPosition(int[] array, int target) {
@@ -119,10 +125,23 @@ import java.util.*;
             return -1;
         }
 
-        //Exercicío 7 (Corrigir)
+        //Exercicío 7
         public int findTenLastPosition(int[] array, int target) {
-          return 1;
-        };
+            int ini = 0, fim = array.length - 1;
+            int posicao = 0;
+            while (ini <= fim) {
+                int meio = (ini + fim) / 2;
+                if (array[meio] == target) {
+                    posicao = meio;
+                    ini = meio + 1;
+                } else if (array[meio] < target) ini = meio + 1;
+                else fim = meio - 1;
+            }
+            System.out.println("A ultima posição do número 10 foi" + posicao);
+            return posicao;
+        }
+
+        ;
 
 
         //Exercicío 8
@@ -130,6 +149,7 @@ import java.util.*;
             int ini = 0, fim = array.length - 1;
             int counter = 0;
             while (ini <= fim) {
+                counter++;
                 int meio = (ini + fim) / 2;
                 if (array[meio] == target) {
                     System.out.println("Número de passos até encontrar o valor:" + counter);
@@ -140,8 +160,51 @@ import java.util.*;
             System.out.println("Número de passos executados:" + counter);
             return counter;
         }
+
+
+        //Exercicío 9
+        public int getBinarySearchElementsElimineds(int[] array, int target) {
+            int ini = 0, fim = array.length - 1;
+            int eliminados = 0;
+            while (ini <= fim) {
+                int meio = (ini + fim) / 2;
+                if (array[meio] == target) {
+                    System.out.println("O número de elementos eliminados até achar o target foi de:" + eliminados);
+                    return eliminados;
+                } else if (array[meio] < target) {
+                    eliminados += (meio - ini + 1);
+                    ini = meio + 1;
+                } else {
+                    eliminados += (fim - meio + 1);
+                    fim = meio - 1;
+                }
+            }
+            System.out.println("O número de elementos eliminados foi de:" + eliminados);
+            return eliminados;
+        }
+        // 10. Dado um vetor de strings ordenado, implemente a busca binária e imprima a quantidade de letras comparadas até encontrar (ou não) a string buscada.
+
+        public int stringComparationCounter(String[] array, String target) {
+            int ini = 0, fim = array.length - 1;
+            while (ini <= fim) {
+                int counter = 0;
+                int meio = (ini + fim) / 2;
+                int compararString = array[meio].compareTo(target);
+                if (compararString == 0){
+                    counter++;
+                    return meio;
+                }
+                else if (compararString < 0) {
+                    ini = meio + 1;
+                    counter++;
+                }
+                else{
+                    fim = meio - 1;
+                    counter++;
+                }
+            }
+            return -1;
+        }
     }
 
-    //9 .Altere o algoritmo da busca binária para também retornar quantos elementos foram eliminados dabusca após cada iteração.
 
-    // 10. Dado um vetor de strings ordenado, implemente a busca binária e imprima a quantidade de letrascomparadas até encontrar (ou não) a string buscada.
