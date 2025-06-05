@@ -9,5 +9,6 @@
 /dataSources/
 /dataSources.local.xml
 algorithms_dsa.iml
+Algorithms.iml
 .idea
 out
