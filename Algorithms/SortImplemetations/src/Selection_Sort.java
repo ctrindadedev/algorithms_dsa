@@ -17,28 +17,27 @@ public class Selection_Sort {
         //Testes
 
         System.out.println("--- Exercício 1 e 7 (Selection Sort + Busca Binária) ---");
-        //Exercicío 1 + 7
         int[] sortedIntegers = integersOnlySelectionSort(tenIntegers);
         findInput(sortedIntegers, 100);
         System.out.println("Vetor ordenado: " + Arrays.toString(sortedIntegers));
 
         System.out.println("\n--- Exercício 2 (Passo a Passo do SelectionSort) ---");
 
-        //Exercicío 2
         selectionSortSteps(eightIntegers);
 
-        //Exercicío 3
         System.out.println("\n--- Exercício 3 (Leitura de 8 números e ordenação) ---");
         exercicio3();
 
-       //Exercicío 4
         System.out.println("\n--- Exercício 4 (Ordem Decrescente SelectionSort) ---");
         System.out.println("Vetor ordenado decrescente: " + Arrays.toString(reverseSelectionSort(nineIntegers)));
 
-        //Exercicío 5
+
         System.out.println("\n--- Exercício 5 (Selection Sort com Strings) ---");
         selectionSortStrings(fiveLetters);
 
+        System.out.println("\n--- Exercício 9 (Selection Sort com Doubles) ---");
+
+        System.out.println("Vetor de doubles ordenado: " + Arrays.toString(selectionSort(tenDoubles)));
 
         //Exercicíos com entrada do User
 
@@ -48,9 +47,6 @@ public class Selection_Sort {
         System.out.println("\n--- Exercício 8 (Comparação de Selection Sort com Bubble Sort) ---");
         exercicio8();
 
-        System.out.println("\n--- Exercício 9 (Selection Sort com Doubles) ---");
-
-        System.out.println("Vetor de doubles ordenado: " + Arrays.toString(selectionSort(tenDoubles)));
 
         System.out.println("\n--- Exercício 10 (Leitura de notas de alunos e ordenação) ---");
         exercicio10();
@@ -136,6 +132,7 @@ public class Selection_Sort {
 
         //}
 
+    //Implementação de BinarySearch
         public  static  int findInput(int[] array, int target) {
             int ini = 0, fim = array.length - 1;
             while (ini <= fim) {
@@ -207,7 +204,7 @@ public class Selection_Sort {
 
 
 
-    // Implementações para exercicíos com leitura
+    // Implementações para exercicíos com leitura de input do user
 
     public static void exercicio3() {
         Scanner scanner = new Scanner(System.in);
@@ -222,7 +219,6 @@ public class Selection_Sort {
         System.out.println("Vetor original: " + Arrays.toString(eightUserInputs));
         integersOnlySelectionSort(eightUserInputs);
         System.out.println("Vetor ordenado: " + Arrays.toString(eightUserInputs));
-        // scanner.close(); // Considerar fechar o scanner se for o fim do programa.
     }
 
 
@@ -239,10 +235,27 @@ public class Selection_Sort {
         System.out.println("Nomes originais: " + Arrays.toString(fiveNames));
         selectionSortStrings(fiveNames);
         System.out.println("Nomes ordenados: " + Arrays.toString(fiveNames));
-        // scanner.close();
     }
+    public static void exercicio10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Quantas notas de alunos você deseja inserir? ");
+        int numNotas = scanner.nextInt();
+        double[] notas = new double[numNotas];
 
-     // Bubble Sort para o Exercício 8
+        System.out.println("Digite as " + numNotas + " notas:");
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print("Nota " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+
+        System.out.println("Notas originais: " + Arrays.toString(notas));
+        selectionSortDoubles(notas);
+        System.out.println("Notas ordenadas: " + Arrays.toString(notas));
+    };
+
+    //Implementações exercicío 8
+
+     // Bubble Sort (Otimizado)
 
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
@@ -274,7 +287,7 @@ public class Selection_Sort {
     }
 
 
-     //Exercício 8: Comparar performance do Selection Sort com Bubble Sort.
+     //Comparar performance do Selection Sort com Bubble Sort.
 
 
     public static void exercicio8() {
@@ -302,24 +315,6 @@ public class Selection_Sort {
             System.out.println("Bubble Sort:    " + durationBubble + " ms");
         }
     }
-
-    public static void exercicio10() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Quantas notas de alunos você deseja inserir? ");
-        int numNotas = scanner.nextInt();
-        double[] notas = new double[numNotas];
-
-        System.out.println("Digite as " + numNotas + " notas:");
-        for (int i = 0; i < notas.length; i++) {
-            System.out.print("Nota " + (i + 1) + ": ");
-            notas[i] = scanner.nextDouble();
-        }
-
-        System.out.println("Notas originais: " + Arrays.toString(notas));
-        selectionSortDoubles(notas);
-        System.out.println("Notas ordenadas: " + Arrays.toString(notas));
-        // scanner.close();
-    };
 }
 
 
