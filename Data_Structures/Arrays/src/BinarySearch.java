@@ -16,7 +16,6 @@ import java.util.*;
             //Instância da minha classe
             BinarySearch obj = new BinarySearch();
 
-
             //Meus inputs para testar as soluções
             int[] tenIntegers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
             int[] twentyIntegers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 35, 40, 41, 80, 99, 1009, 20000};

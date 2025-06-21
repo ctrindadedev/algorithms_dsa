@@ -19,6 +19,7 @@ public class LinearSearch {
         double[] sevenDoubles = {4.7, 6.7, 7, 7.7, 8.3, 9.1};
         String[] sixNames = {"Ana", "Caio", "Dandara", "Eugeneio", "Flavia", "Mario"};
         String[] products = {"Massa de Cuscuz", "Fermento", "Cuscuz", "Maçã"};
+        int[] vetorSemOrdem = { 5, 3, 1 ,4 ,2};
 
         System.out.println("Digite um número:");
         int input = sc.nextInt();
@@ -56,6 +57,7 @@ public class LinearSearch {
         System.out.println("Número não encontrado");
         return -1;
     }
+
 
     // Exercício 2
     public static int findUserInputFirstApparence(int[] vetor, int chave) {
@@ -164,4 +166,6 @@ public class LinearSearch {
         System.out.println("Índice do menor valor: " + menorIndice);
         return menorIndice;
     }
+
 }
+
