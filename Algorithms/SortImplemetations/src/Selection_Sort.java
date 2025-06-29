@@ -132,7 +132,7 @@ public class Selection_Sort {
 
         //}
 
-    //Implementação de BinarySearch
+    //Implementação de Arrays.BinarySearch
         public  static  int findInput(int[] array, int target) {
             int ini = 0, fim = array.length - 1;
             while (ini <= fim) {
