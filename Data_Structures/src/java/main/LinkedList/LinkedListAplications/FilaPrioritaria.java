@@ -1,4 +1,4 @@
-package LinkedListAplications;
+package java.main.LinkedList.LinkedListAplications;
 
 //Solução do professor (Sem utilizar o package LinkedList)
 

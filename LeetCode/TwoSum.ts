@@ -8,12 +8,28 @@
 
 //First Solution
 function twoSum(nums: number[], target: number): number[] {
-  for (let index: number = 0; index < nums.length; index++) {
-    let solution: number[] = [];
-    let pivo: number = nums[index];
-    if (pivo + nums[index + 1] == target) {
-      solution.push(index, index + 1);
-      return solution;
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[j] === target - nums[i]) {
+        return [i, j];
+      }
     }
   }
+  return [];
+}
+
+//Second Solution (Hash Table)
+function twoSumHash(nums: number[], target: number): any[] {
+  const map: Map<number, number> = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    //Hashear o valor de cada indice
+    map.set(nums[i], i);
+  }
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement) && map.get(complement) !== i) {
+      return [i, map.get(complement)];
+    }
+  }
+  return [];
 }
