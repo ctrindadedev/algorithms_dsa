@@ -23,7 +23,7 @@ int main() {
     vector<int> X(Q);
     for(int &x : X) cin >> x;
 
-    // Processamento das Queries
+    // Processamento das entradas de X
     for (int i = 0; i < Q; ++i) {
         bool found = false;
         int target = X[i];

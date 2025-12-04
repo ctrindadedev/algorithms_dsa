@@ -12,3 +12,6 @@
 .idea
 out
 .venv
+bad_solver
+good_solver
+*.csv
