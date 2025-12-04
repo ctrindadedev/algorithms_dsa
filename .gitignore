@@ -15,3 +15,5 @@ out
 bad_solver
 good_solver
 *.csv
+output/
+.vscode/
