@@ -1,6 +1,6 @@
-package java.main.LinkedList.LinkedListAplications;
+package java.main.LinkedList.Problems;
 
-import java.main.LinkedList.DoubleLinkedList;
+import java.main.LinkedList.Implemations.DoubleLinkedList;
 
 /**
  * Desafio: Histórico de Pedidos

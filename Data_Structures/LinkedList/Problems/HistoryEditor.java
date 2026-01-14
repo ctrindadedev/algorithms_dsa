@@ -1,4 +1,4 @@
-package java.main.LinkedList.LinkedListAplications;
+package java.main.LinkedList.Problems;
 
 public class HistoryEditor {
 

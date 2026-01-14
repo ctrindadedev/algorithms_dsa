@@ -45,8 +45,7 @@ public class Inserction_Sort {
         exercicio9();
 
         System.out.println("\n--- Exercício 10 (Busca binária para localizar um valor inserido pelo usuário, dado um vetor ordenado) ---");
-            BinarySearch binarySearch = new BinarySearch();
-            binarySearch.findInput(sortedIntegers, 5);
+            findInput(sortedIntegers, 5);
     }
 
     //Implementação dos Metódos
@@ -106,6 +105,19 @@ public class Inserction_Sort {
         }
         return v;
     }
+
+    public static int findInput(int[] array, int target) {
+            int ini = 0, fim = array.length - 1;
+            while (ini <= fim) {
+                int meio = (ini + fim) / 2;
+                if (array[meio] == target) {
+                    System.out.println("O input informado existe no vetor.");
+                    return meio;
+                } else if (array[meio] < target) ini = meio + 1;
+                else fim = meio - 1;
+            }
+            return -1;
+        }
 
     public static int[] inserctionReverseSort(int[] v) {
         for (int i = 1; i < v.length; i++) {

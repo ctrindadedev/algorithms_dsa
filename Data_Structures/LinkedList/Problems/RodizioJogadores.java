@@ -1,6 +1,6 @@
-package java.main.LinkedList.LinkedListAplications;
+package java.main.LinkedList.Problems;
 
-import java.main.LinkedList.CircleLinkedList;
+import java.main.LinkedList.Implemations.CircleLinkedList;
 
 /**
  * Desafio: Rodízio de Jogadores
